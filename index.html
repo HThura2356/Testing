@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Romantic Entry</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="petals"></div>
+
+  <div class="container">
+    <h1 class="glow">Welcome to My World</h1>
+    <p class="soft-text">Type <strong>1</strong> or <strong>2</strong> to continue</p>
+    <input id="choice" type="text" placeholder="Enter 1 or 2" maxlength="1" />
+    <button onclick="goNext()">Next ➤</button>
+  </div>
+
+  <script>
+    function goNext() {
+      const choice = document.getElementById("choice").value.trim();
+      if (choice === "1") {
+        window.location.href = "page1.html";
+      } else if (choice === "2") {
+        window.location.href = "page2.html";
+      } else {
+        alert("Please enter 1 or 2 only.");
+      }
+    }
+
+    document.getElementById("choice").addEventListener("keypress", function (e) {
+      if (e.key === "Enter") goNext();
+    });
+
+    // Optional: Floating petal animation
+    const petalsContainer = document.querySelector(".petals");
+    for (let i = 0; i < 15; i++) {
+      let petal = document.createElement("div");
+      petal.className = "petal";
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+      petalsContainer.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
