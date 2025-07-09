@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Secret Universe</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom left, #fdf2f8, #e0f2fe);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+      padding: 60px 50px;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      animation: slideIn 1s ease forwards;
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    h2 {
+      font-size: 2.3rem;
+      color: #0e7490;
+      margin-bottom: 20px;
+      text-shadow: 0 0 6px #67e8f9;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #334155;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    @keyframes slideIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box">
+    <h2>You Picked Magic ✨</h2>
+    <p>
+      You chose number 2,\n
+      and the world replied softly…\n\n
+      “This space belongs to dreamers,\n
+      where logic fades and wonder wakes.”\n
+      Welcome home, wanderer 🌌
+    </p>
+  </div>
+</body>
+</html>

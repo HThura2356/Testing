@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Poem for You</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to top right, #fff0f6, #fce7f3);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .poem-container {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      padding: 60px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #e11d48;
+      margin-bottom: 20px;
+      text-shadow: 0 0 6px #fda4af;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #7f1d1d;
+      line-height: 1.8;
+      white-space: pre-line;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="poem-container">
+    <h2>From the Heart 💌</h2>
+    <p>
+      If your smile were a sunrise,\n
+      I'd wake for you each day.\n
+      If your voice were music,\n
+      I’d hit replay and sway.\n\n
+      You picked 1—and I just knew,\n
+      My words would drift to you 🌸
+    </p>
+  </div>
+</body>
+</html>
