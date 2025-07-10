@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heartbeat of Love</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle, #330000, #000000);
+      color: #ff4f81;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .console {
+      font-family: monospace;
+      white-space: pre;
+      font-size: 12px;
+      line-height: 1;
+      color: #ff4f81;
+      padding: 10px;
+      animation: fadein 2s ease-in;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message {
+      font-size: 1.4rem;
+      margin-top: 20px;
+      animation: glow 2s infinite ease-in-out;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 5px #ff4f81, 0 0 10px #ff4f81; }
+      50% { text-shadow: 0 0 20px #ff4f81, 0 0 30px #ff4f81; }
+    }
+  </style>
+</head>
+<body>
+  <div class="console" id="heart"></div>
+  <div class="message">i love you &lt;3</div>
+
+  <script>
+    const heart = document.getElementById("heart");
+    const lines = [];
+
+    for (let y = 15; y > -15; y--) {
+      let row = "";
+      for (let x = -30; x < 30; x++) {
+        const x_scaled = x * 0.05;
+        const y_scaled = y * 0.1;
+        const a = x_scaled**2 + y_scaled**2 - 1;
+        if (a**3 - x_scaled**2 * y_scaled**3 <= 0) {
+          row += "*";
+        } else {
+          row += " ";
+        }
+      }
+      lines.push(row);
+    }
+
+    // Animate lines one by one 💫
+    let i = 0;
+    function animateHeart() {
+      if (i < lines.length) {
+        heart.innerText += lines[i] + "\n";
+        i++;
+        setTimeout(animateHeart, 50); // Slow reveal
+      }
+    }
+    animateHeart();
+  </script>
+</body>
+</html>
